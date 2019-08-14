@@ -13,8 +13,10 @@ exports.parent = (req,res) =>
     let err =  validation.parents_info(obj);
     console.log(err);
 
-if(err == null) 
-    da.parent(obj.family_id, obj.id, obj.name, obj.child_name, obj.gchild_name,res);
+if(err == null) {
+    let dbErr  =  da.parent(obj.family_id, obj.id, obj.name, obj.child_name, obj.gchild_name,res);
+    console.log(dbErr);
+}
 else
     {
         if(err.details[0].message.includes("empty"))
