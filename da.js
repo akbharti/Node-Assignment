@@ -19,7 +19,7 @@ let con = mysql.createConnection({
 
     con.query(sqlInsert,   (err, result, fields) =>{
       if (err){ 
-        console.log(err.sqlMessage);
+        console.log("From da.js file",err.sqlMessage);
         return err.sqlMessage;
         // res.json(err.sqlMessage);
       }

@@ -11,7 +11,6 @@ exports.parent = (req,res) =>
 {
     let obj = req.body;
     let err =  validation.parents_info(obj);
-    console.log(err);
 
 if(err == null) {
     let dbErr  =  da.parent(obj.family_id, obj.id, obj.name, obj.child_name, obj.gchild_name,res);
